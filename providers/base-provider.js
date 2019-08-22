@@ -570,6 +570,7 @@ var BaseProvider = /** @class */ (function (_super) {
     };
     BaseProvider.prototype.resetEventsBlock = function (blockNumber) {
         this._lastBlockNumber = blockNumber - 1;
+        this._emitted.block = this._lastBlockNumber;
         if (this.polling) {
             this._doPoll();
         }
